@@ -51,6 +51,8 @@ public class UCrop {
     public static final String EXTRA_MAX_SIZE_X = EXTRA_PREFIX + ".MaxSizeX";
     public static final String EXTRA_MAX_SIZE_Y = EXTRA_PREFIX + ".MaxSizeY";
 
+    public static final String EXTRA_COVER_TEXT = EXTRA_PREFIX + ".CoverText";
+
     private Intent mCropIntent;
     private Bundle mCropOptionsBundle;
 
@@ -81,6 +83,16 @@ public class UCrop {
     public UCrop withAspectRatio(float x, float y) {
         mCropOptionsBundle.putFloat(EXTRA_ASPECT_RATIO_X, x);
         mCropOptionsBundle.putFloat(EXTRA_ASPECT_RATIO_Y, y);
+        return this;
+    }
+
+    /**
+     * Set the cover text for the overlay.
+     *
+     * @param coverText cover text
+     */
+    public UCrop withCoverText(String coverText) {
+        mCropOptionsBundle.putString(EXTRA_COVER_TEXT, coverText);
         return this;
     }
 

@@ -61,6 +61,28 @@
                 android:layout_margin="5dp"
                 android:background="@color/colorAccent" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/label_cover_text"
+                android:textAppearance="?android:textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/edit_text_cover_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:lines="2"
+                android:maxLines="2"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:background="@color/colorAccent" />
+
             <RadioGroup
                 android:id="@+id/radio_group_aspect_ratio"
                 android:layout_width="match_parent"

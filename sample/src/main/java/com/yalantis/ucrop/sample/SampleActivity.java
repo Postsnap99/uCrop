@@ -56,6 +56,7 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
     private static final String SAMPLE_CROPPED_IMAGE_NAME = "SampleCropImage";
 
     private RadioGroup mRadioGroupAspectRatio, mRadioGroupCompressionSettings;
+    private EditText mEditTextCoverText;
     private EditText mEditTextMaxWidth, mEditTextMaxHeight;
     private EditText mEditTextRatioX, mEditTextRatioY;
     private CheckBox mCheckBoxMaxSize;
@@ -184,6 +185,7 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
         mRadioGroupAspectRatio = findViewById(R.id.radio_group_aspect_ratio);
         mRadioGroupCompressionSettings = findViewById(R.id.radio_group_compression_settings);
         mCheckBoxMaxSize = findViewById(R.id.checkbox_max_size);
+        mEditTextCoverText = findViewById(R.id.edit_text_cover_text);
         mEditTextRatioX = findViewById(R.id.edit_text_ratio_x);
         mEditTextRatioY = findViewById(R.id.edit_text_ratio_y);
         mEditTextMaxWidth = findViewById(R.id.edit_text_max_width);
@@ -311,6 +313,11 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
             } catch (NumberFormatException e) {
                 Log.e(TAG, "Number please", e);
             }
+        }
+
+        String coverText = mEditTextCoverText.getText().toString().trim();
+        if (coverText.length() > 0) {
+            uCrop.withCoverText(coverText);
         }
 
         return uCrop;
